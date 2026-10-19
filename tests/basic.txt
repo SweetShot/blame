@@ -1,0 +1,28 @@
+# Run with: rhun PROJECT --headless 1000x600 --scale 1 --extensions DIR --script tests/basic.txt
+# in a Git repository (tests/run.sh sets it up). Line 2 of a.txt is Grace's, the others Ada's.
+wait 100
+open proj/a.txt
+wait-ext blame running
+wait-git
+wait 1000
+cmd goto_line
+type 2
+key Return
+wait 1500
+print-present deco
+move 70 86
+wait 1500
+print-tip
+key End
+type !
+wait 1500
+print-present deco
+key BackSpace
+wait 1500
+print-present deco
+cmd blame.line_history
+wait 1500
+print-palette
+key Return
+wait 2000
+print-tabs
