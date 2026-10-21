@@ -3,9 +3,10 @@
 Who changed each line and when, in [rhun](https://rhun.app). A small Rust program built on
 [rhun-ext](https://github.com/rhun-editor/extension-protocol/tree/main/rust/rhun-ext).
 
-- **At the cursor**: the line's author and age, as "Ada Lovelace, 3 days ago", in the status bar
-  and after the line's text (where rhun draws decoration text). A line you changed and have not
-  committed says "You, not committed yet": the blame covers unsaved edits.
+- **At the cursor**: the line's author, age and commit subject after the line's text, as
+  "Ada Lovelace, 3 days ago • Fix the parser" in a muted color, and "Blame: Ada Lovelace, 3 days ago"
+  in the status bar. A line you changed and have not committed says "You, not committed yet": the
+  blame covers unsaved edits.
 - **On hover**: rest the pointer on a line for its commit's author, mail, date and subject.
 - **Show File History** and **Show Line History** (also in the editor's menu, for the selected
   lines) list the commits; choose one to open its change to the file in rhun's diff view.
