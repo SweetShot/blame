@@ -1,5 +1,7 @@
 ext=blame state=running
 deco blame 2:1-2:4 after=    Grace, AGE • Shout the second line
+86 107
+inlay deco 2 4
 tip=Ada <ada@example.invalid>, AGE (2001-02-03)
 SHA First lines
 deco blame 2:1-2:5 after=    You, not committed yet

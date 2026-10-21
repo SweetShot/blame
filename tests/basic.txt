@@ -10,6 +10,9 @@ type 2
 key Return
 wait 1500
 print-present deco
+# the blame text is drawn after line 2's text: a point well right of "TWO" is in it
+print-xy 2 4
+print-hit 300 107
 move 70 86
 wait 1500
 print-tip
