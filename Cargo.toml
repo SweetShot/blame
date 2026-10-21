@@ -1,0 +1,16 @@
+[package]
+name = "blame"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Who changed each line and when, in rhun: at the cursor, on hover, and the history of a file or of lines"
+publish = false
+
+[dependencies]
+rhun-ext = { git = "https://github.com/rhun-editor/extension-protocol", tag = "rust-v1.3.0" }
+
+[profile.release]
+opt-level = "s"
+lto = true
+strip = true
+panic = "abort"
