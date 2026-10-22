@@ -18,9 +18,9 @@ work=$(cd "$work" && pwd -P)
 trap 'rm -rf "$work"' EXIT
 dir=$work/exts/$owner/$name
 mkdir -p "$dir/bin" "$work/proj" "$work/config/rhun" "$work/state"
+sh tests/layout.sh "$dir"  # what the release ships: the manifest, the icon, README.md, LICENSE
 cargo build --release --quiet
 cp "target/release/$name" "$dir/bin/$name-$target"
-cp extension.ini icon.png "$dir/"
 (
     cd "$work/proj"
     export GIT_CONFIG_NOSYSTEM=1 HOME="$work"

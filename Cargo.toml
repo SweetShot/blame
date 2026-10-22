@@ -7,7 +7,8 @@ description = "Who changed each line and when, in rhun: at the cursor, on hover,
 publish = false
 
 [dependencies]
-rhun-ext = { git = "https://github.com/rhun-editor/extension-protocol", tag = "rust-v1.3.0" }
+# rhun-ext 1.4.1: protocol 1.1 (rhun 0.18)
+rhun-ext = { git = "https://github.com/rhun-editor/extension-protocol", tag = "rust-v1.4.1" }
 
 [profile.release]
 opt-level = "s"

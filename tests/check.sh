@@ -15,11 +15,9 @@ work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
 dir=$work/$owner/$name
 mkdir -p "$dir/bin"
+sh tests/layout.sh "$dir"  # what the release ships: the manifest, the icon, themes/, icon-themes/, ...
 cargo build --release --quiet
 cp "target/release/$name" "$dir/bin/$name-$target"
-cp extension.ini "$dir/"
-icon=$(sed -n 's/^icon *= *//p' extension.ini | head -1)
-[ -z "$icon" ] || cp "$icon" "$dir/"
 if [ -n "$RHUN_EXT_CHECK" ]; then
     "$RHUN_EXT_CHECK" "$dir"
 else
