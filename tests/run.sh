@@ -40,6 +40,7 @@ HOME=$work XDG_CONFIG_HOME=$work/config XDG_STATE_HOME=$work/state GIT_CONFIG_NO
     "$RHUN" "$work/proj" --headless 1000x600 --scale 1 --extensions "$work/exts" --script "$work/basic.txt" 2>&1 \
     | sed -E -e 's/pid=[1-9][0-9]*/pid=PID/' -e 's/[0-9]+ (year|month|day|hour|minute)s? ago/AGE/g' \
           -e 's/\([0-9a-f]{7}\.\.[0-9a-f]{7}\)/(SHA..SHA)/' -e 's/^([> ] )[0-9a-f]{7}  /\1SHA  /' \
+          -e 's/Commit: [0-9a-f]+/Commit: SHA/' \
           -e 's/^[0-9a-f]{7} /SHA /' > "$work/out.txt"
 if cmp -s "$work/out.txt" tests/basic.expected; then
     echo "ok   basic"
